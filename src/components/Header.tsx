@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Code2 } from "lucide-react";
@@ -28,7 +27,7 @@ const Header = () => {
               <Code2 className="h-6 w-6 text-primary-foreground" />
             </div>
             <span className="text-2xl font-bold font-playfair text-gradient">
-              nammaCode
+              NammaCode
             </span>
           </Link>
 
