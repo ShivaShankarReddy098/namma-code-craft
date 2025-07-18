@@ -18,11 +18,16 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="p-2 bg-primary rounded-lg">
-                <Code2 className="h-6 w-6 text-primary-foreground" />
+              <div className="p-1 bg-black rounded-full group-hover:scale-110 transition-transform duration-200">
+                {/* <Code2 className="h-6 w-6 text-primary-foreground" /> */}
+                <img
+                  src="/nammacode-logo.png"
+                  alt="NammaCode Logo"
+                  className="md:h-8 w-10"
+                />
               </div>
-              <span className="text-2xl font-bold font-playfair text-gradient">
-                nammaCode
+              <span className="text-2xl font-bold font-playfair text-gradient w-[150px] text-center block">
+                <span className="text-black">Namma</span> Code
               </span>
             </Link>
             <p className="text-muted-foreground max-w-xs">
@@ -30,21 +35,22 @@ const Footer = () => {
               exceptional user experiences.
             </p>
             <div className="flex space-x-4">
-              <a
+              {/* <a
                 href="#"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Facebook className="h-5 w-5" />
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 href="#"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Twitter className="h-5 w-5" />
-              </a>
+              </a> */}
               <a
-                href="#"
+                href="https://www.instagram.com/nammacode?igsh=MWFqdGM0OGRpZXltdQ=="
                 className="text-muted-foreground hover:text-primary transition-colors"
+                target="_blank"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -125,11 +131,13 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary" />
-                <span className="text-muted-foreground">nammacode@.co.in</span>
+                <span className="text-muted-foreground">
+                  nammacode@gmail.com
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary" />
-                <span className="text-muted-foreground">+1 (555) 123-4567</span>
+                <span className="text-muted-foreground">+91 9481973172</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-primary" />
@@ -144,7 +152,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-muted-foreground text-sm">
-              © 2025 nammaCode. All rights reserved.
+              © 2025 Namma Code. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a

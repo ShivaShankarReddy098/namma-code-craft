@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,11 +13,13 @@ const Contact = () => {
     message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -35,19 +36,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      value: "hello@nammacode.com",
+      value: "nammacode@gmail.com",
       description: "Send us an email anytime",
     },
     {
       icon: Phone,
       title: "Call Us",
-      value: "+1 (555) 123-4567",
+      value: "+91 9481973172",
       description: "Mon-Fri from 8am to 5pm",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      value: "123 Tech Street, Digital City",
+      value: "Bengaluru,Karnataka,India",
       description: "Come say hello at our office",
     },
   ];
@@ -62,7 +63,8 @@ const Contact = () => {
               Get In <span className="text-gradient">Touch</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in-up">
-              Ready to start your project? Let's discuss how we can help bring your vision to life.
+              Ready to start your project? Let's discuss how we can help bring
+              your vision to life.
             </p>
           </div>
         </div>
@@ -75,10 +77,10 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="space-y-8">
               {contactInfo.map((info, index) => (
-                <Card 
-                  key={info.title} 
+                <Card
+                  key={info.title}
                   className="border-border/50 hover:border-primary/20 transition-colors"
-                  style={{animationDelay: `${index * 0.1}s`}}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
@@ -87,8 +89,12 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">{info.title}</h3>
-                        <p className="text-foreground font-medium mb-1">{info.value}</p>
-                        <p className="text-muted-foreground text-sm">{info.description}</p>
+                        <p className="text-foreground font-medium mb-1">
+                          {info.value}
+                        </p>
+                        <p className="text-muted-foreground text-sm">
+                          {info.description}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -100,13 +106,18 @@ const Contact = () => {
             <div className="lg:col-span-2">
               <Card className="border-border/50">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-playfair">Send us a message</CardTitle>
+                  <CardTitle className="text-2xl font-playfair">
+                    Send us a message
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium mb-2">
+                        <label
+                          htmlFor="name"
+                          className="block text-sm font-medium mb-2"
+                        >
                           Name *
                         </label>
                         <input
@@ -121,7 +132,10 @@ const Contact = () => {
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium mb-2">
+                        <label
+                          htmlFor="email"
+                          className="block text-sm font-medium mb-2"
+                        >
                           Email *
                         </label>
                         <input
@@ -137,7 +151,10 @@ const Contact = () => {
                       </div>
                     </div>
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                      <label
+                        htmlFor="subject"
+                        className="block text-sm font-medium mb-2"
+                      >
                         Subject *
                       </label>
                       <input
@@ -152,7 +169,10 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium mb-2">
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium mb-2"
+                      >
                         Message *
                       </label>
                       <textarea
@@ -166,7 +186,11 @@ const Contact = () => {
                         placeholder="Tell us about your project..."
                       />
                     </div>
-                    <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 group">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full bg-primary hover:bg-primary/90 group"
+                    >
                       <Send className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
                       Send Message
                     </Button>
@@ -179,7 +203,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-secondary/30">
+      {/* <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-playfair mb-4">
@@ -190,10 +214,12 @@ const Contact = () => {
             </p>
           </div>
           <div className="bg-muted rounded-lg h-64 md:h-96 flex items-center justify-center">
-            <p className="text-muted-foreground">Interactive map would be integrated here</p>
+            <p className="text-muted-foreground">
+              Interactive map would be integrated here
+            </p>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

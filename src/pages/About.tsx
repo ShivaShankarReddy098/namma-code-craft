@@ -29,32 +29,32 @@ const About = () => {
     },
   ];
 
-  const team = [
-    {
-      name: "Shiva Shankar Reddy",
-      role: "Lead Developer",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-    },
-    {
-      name: "Rahul S Math",
-      role: "UI/UX Designer",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-    },
-    {
-      name: "Dadapeer",
-      role: "Frontend Developer",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-    },
-    {
-      name: "Abhi",
-      role: "Backend Developer",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-    },
-  ];
+  // const team = [
+  //   {
+  //     name: "Shiva Shankar Reddy",
+  //     role: "Lead Developer",
+  //     image:
+  //       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+  //   },
+  //   {
+  //     name: "Rahul S Math",
+  //     role: "UI/UX Designer",
+  //     image:
+  //       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+  //   },
+  //   {
+  //     name: "Dadapeer",
+  //     role: "Frontend Developer",
+  //     image:
+  //       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+  //   },
+  //   {
+  //     name: "Abhi",
+  //     role: "Backend Developer",
+  //     image:
+  //       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+  //   },
+  // ];
 
   return (
     <div className="pt-16">
@@ -63,7 +63,7 @@ const About = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold font-playfair mb-6 animate-fade-in">
-              About <span className="text-gradient">nammaCode</span>
+              About <span className="text-gradient">Namma Code</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in-up">
               We're a passionate team of developers, designers, and digital
@@ -83,7 +83,7 @@ const About = () => {
                 Our <span className="text-gradient">Story</span>
               </h2>
               <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
-                Founded in 2020, nammaCode emerged from a simple belief: every
+                Founded in 2025, nammaCode emerged from a simple belief: every
                 business deserves a powerful digital presence that truly
                 represents their vision and connects with their audience.
               </p>
@@ -151,7 +151,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-playfair mb-4">
@@ -160,10 +160,10 @@ const About = () => {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               The talented individuals behind nammaCode who bring creativity,
               expertise, and passion to every project.
-            </p>
-          </div>
+            </p> */}
+      {/* </div> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <Card
                 key={member.name}
@@ -183,9 +183,9 @@ const About = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
+          </div> */}
+      {/* </div>
+      </section> */}
     </div>
   );
 };

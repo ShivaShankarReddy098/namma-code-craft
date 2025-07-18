@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [name, setName] = useState("Namma");
   const location = useLocation();
 
   const navigation = [
@@ -14,6 +15,12 @@ const Header = () => {
     { name: "Portfolio", href: "/portfolio" },
     { name: "Contact", href: "/contact" },
   ];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setName((prev) => (prev === "Namma" ? "ನಮ್ಮ" : "Namma"));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -23,11 +30,17 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-primary rounded-lg group-hover:scale-110 transition-transform duration-200">
-              <Code2 className="h-6 w-6 text-primary-foreground" />
+            <div className="p-1 bg-black rounded-full group-hover:scale-110 transition-transform duration-200">
+              {/* <Code2 className="h-6 w-6 text-primary-foreground" /> */}
+              <img
+                src="/nammacode-logo.png"
+                alt="NammaCode Logo"
+                className="md:h-8 w-10"
+              />
             </div>
-            <span className="text-2xl font-bold font-playfair text-gradient">
-              NammaCode
+
+            <span className="text-2xl font-bold font-playfair text-gradient w-[150px] text-center block">
+              <span className="text-black">{name}</span> Code
             </span>
           </Link>
 
