@@ -56,7 +56,7 @@ const Banner = () => {
               />
             </div>
 
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center justify-between gap-2">
               {/* Left content with icon */}
               <div className="flex items-center gap-4 flex-1">
                 <div className="flex-shrink-0">
@@ -80,7 +80,7 @@ const Banner = () => {
                       FREE DOMAIN
                     </span>
                     <span>service with</span>
-                    <span className="mx-2 px-3 py-1 bg-gradient-to-r from-green-400 to-emerald-400 text-black font-bold rounded-full text-xs md:text-sm shadow-lg animate-pulse inline-block">
+                    <span className="mx-1 px-2 py-1 bg-gradient-to-r from-green-400 to-emerald-400 text-black font-bold rounded-full text-xs md:text-sm shadow-lg animate-pulse inline-block">
                       1 MONTH FREE MAINTENANCE
                     </span>
                   </div>

@@ -6,10 +6,10 @@ import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
+  const [formData1, setFormData1] = useState({
     name: "",
     email: "",
-    subject: "",
+    phone: "",
     message: "",
   });
 
@@ -17,19 +17,29 @@ const Contact = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
+    setFormData1((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. We'll get back to you soon.",
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "47dec2d1-37c5-4a7f-969c-c4b135b45b1b");
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
     });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    const data = await response.json();
+    console.log(data);
+    if (data.success) {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. We'll get back to you soon.",
+      });
+      setFormData1({ name: "", email: "", phone: "", message: "" });
+    }
   };
 
   const contactInfo = [
@@ -124,7 +134,7 @@ const Contact = () => {
                           type="text"
                           id="name"
                           name="name"
-                          value={formData.name}
+                          value={formData1.name}
                           onChange={handleInputChange}
                           required
                           className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent bg-background"
@@ -142,7 +152,7 @@ const Contact = () => {
                           type="email"
                           id="email"
                           name="email"
-                          value={formData.email}
+                          value={formData1.email}
                           onChange={handleInputChange}
                           required
                           className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent bg-background"
@@ -151,6 +161,24 @@ const Contact = () => {
                       </div>
                     </div>
                     <div>
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium mb-2"
+                      >
+                        Phone *
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData1.phone}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent bg-background"
+                        placeholder="Your phone number"
+                      />
+                    </div>
+                    {/* <div>
                       <label
                         htmlFor="subject"
                         className="block text-sm font-medium mb-2"
@@ -167,7 +195,7 @@ const Contact = () => {
                         className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent bg-background"
                         placeholder="Project inquiry"
                       />
-                    </div>
+                    </div> */}
                     <div>
                       <label
                         htmlFor="message"
@@ -179,7 +207,7 @@ const Contact = () => {
                         id="message"
                         name="message"
                         rows={6}
-                        value={formData.message}
+                        value={formData1.message}
                         onChange={handleInputChange}
                         required
                         className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent bg-background resize-none"
