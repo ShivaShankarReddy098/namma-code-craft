@@ -33,7 +33,7 @@ const Header = () => {
             <div className="p-1 bg-black rounded-full group-hover:scale-110 transition-transform duration-200">
               {/* <Code2 className="h-6 w-6 text-primary-foreground" /> */}
               <img
-                src="/nammacode-logo.png"
+                src="/nammacode-logo1.png"
                 alt="NammaCode Logo"
                 className="md:h-8 w-10"
               />

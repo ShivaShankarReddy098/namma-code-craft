@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Banner from "@/components/banner";
 
 const Index = () => {
   const services = [
@@ -50,6 +51,7 @@ const Index = () => {
 
   return (
     <div className="pt-16">
+      <Banner />
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-secondary/10 overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
