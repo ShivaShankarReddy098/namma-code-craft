@@ -1,7 +1,67 @@
 import { Users, Target, Award, Lightbulb } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import StructuredData from "@/components/StructuredData";
 
 const About = () => {
+  // Structured Data for About Page
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Namma Code",
+    url: "https://www.nammacode.com/about",
+    description:
+      "Learn about Namma Code, a passionate team of developers, designers, and digital strategists dedicated to creating exceptional web experiences.",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Namma Code",
+      foundingDate: "2025",
+      description:
+        "We're a passionate team of developers, designers, and digital strategists dedicated to creating exceptional web experiences that drive business growth.",
+      mission:
+        "Every business deserves a powerful digital presence that truly represents their vision and connects with their audience.",
+      values: [
+        "Mission-Driven - We're committed to delivering solutions that make a real impact",
+        "Innovation First - We stay ahead with cutting-edge technologies",
+        "Client-Focused - Your success is our success",
+        "Quality Excellence - We maintain the highest standards",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bengaluru",
+        addressRegion: "Karnataka",
+        addressCountry: "IN",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+91-9481973172",
+        email: "nammacode@gmail.com",
+        contactType: "customer service",
+      },
+    },
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Namma Code",
+    alternateName: "ನಮ್ಮ Code",
+    description:
+      "A full-service digital agency helping businesses of all sizes transform their online presence and achieve their digital goals.",
+    foundingDate: "2025",
+    numberOfEmployees: "2-10",
+    industry: "Web Development",
+    slogan: "Crafting Digital Excellence",
+    knowsAbout: [
+      "Web Development",
+      "UI/UX Design",
+      "SEO Optimization",
+      "Website Rebuilding",
+      "Performance Optimization",
+      "React Development",
+      "Node.js Development",
+    ],
+  };
+
   const values = [
     {
       icon: Target,
@@ -58,6 +118,8 @@ const About = () => {
 
   return (
     <div className="pt-16">
+      <StructuredData data={aboutPageSchema} />
+      <StructuredData data={organizationSchema} />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

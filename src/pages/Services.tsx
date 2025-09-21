@@ -12,8 +12,126 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import StructuredData from "@/components/StructuredData";
 
 const Services = () => {
+  // Structured Data for Services Page
+  const servicesPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    provider: {
+      "@type": "Organization",
+      name: "Namma Code",
+      url: "https://www.nammacode.com",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Web Development Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Web Development",
+            description:
+              "Custom websites and web applications built with modern technologies for optimal performance.",
+            category: "Web Development",
+            provider: {
+              "@type": "Organization",
+              name: "Namma Code",
+            },
+          },
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: "99",
+            priceCurrency: "USD",
+            eligibleQuantity: {
+              "@type": "QuantitativeValue",
+              minValue: 1,
+              unitText: "project",
+            },
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "UI/UX Design",
+            description:
+              "Beautiful, intuitive designs that engage users and drive conversions.",
+            category: "Design",
+            provider: {
+              "@type": "Organization",
+              name: "Namma Code",
+            },
+          },
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: "55",
+            priceCurrency: "USD",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "SEO Optimization",
+            description:
+              "Boost your online visibility and drive organic traffic to your website.",
+            category: "Digital Marketing",
+            provider: {
+              "@type": "Organization",
+              name: "Namma Code",
+            },
+          },
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: "49",
+            priceCurrency: "USD",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Website Rebuilding",
+            description:
+              "Transform your outdated website into a modern, high-performing digital asset.",
+            category: "Web Development",
+            provider: {
+              "@type": "Organization",
+              name: "Namma Code",
+            },
+          },
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: "49",
+            priceCurrency: "USD",
+          },
+        },
+      ],
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.nammacode.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://www.nammacode.com/services",
+      },
+    ],
+  };
+
   const services = [
     {
       icon: Code2,
@@ -111,6 +229,8 @@ const Services = () => {
 
   return (
     <div className="pt-16">
+      <StructuredData data={servicesPageSchema} />
+      <StructuredData data={breadcrumbSchema} />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
