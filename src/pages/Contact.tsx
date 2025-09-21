@@ -3,9 +3,130 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import StructuredData from "@/components/StructuredData";
 
 const Contact = () => {
   const { toast } = useToast();
+
+  // Structured Data for Contact Page
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact Namma Code",
+    url: "https://www.nammacode.com/contact",
+    description:
+      "Ready to start your project? Let's discuss how we can help bring your vision to life.",
+    mainEntity: {
+      "@type": "LocalBusiness",
+      name: "Namma Code",
+      alternateName: "ನಮ್ಮ Code",
+      description:
+        "Professional web development and digital solutions company in Bengaluru, India.",
+      url: "https://www.nammacode.com",
+      telephone: "+91-9481973172",
+      email: "nammacode@gmail.com",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bengaluru",
+        addressRegion: "Karnataka",
+        addressCountry: "IN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "12.9716",
+        longitude: "77.5946",
+      },
+      openingHours: "Mo-Fr 08:00-17:00",
+      priceRange: "$49-$199",
+      serviceArea: {
+        "@type": "Place",
+        name: "India",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Web Development Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Web Development",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "UI/UX Design",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "SEO Optimization",
+            },
+          },
+        ],
+      },
+    },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.nammacode.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Contact",
+          item: "https://www.nammacode.com/contact",
+        },
+      ],
+    },
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.nammacode.com/#business",
+    name: "Namma Code",
+    image: "https://www.nammacode.com/nammacode-logo1.png",
+    description:
+      "Professional web development and digital solutions company specializing in custom websites, UI/UX design, and SEO optimization.",
+    url: "https://www.nammacode.com",
+    telephone: "+91-9481973172",
+    email: "nammacode@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "",
+      addressLocality: "Bengaluru",
+      addressRegion: "Karnataka",
+      postalCode: "",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 12.9716,
+      longitude: 77.5946,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "17:00",
+    },
+    sameAs: ["https://www.instagram.com/nammacode"],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.7",
+      reviewCount: "45",
+    },
+  };
+
   const [formData1, setFormData1] = useState({
     name: "",
     email: "",
@@ -65,6 +186,8 @@ const Contact = () => {
 
   return (
     <div className="pt-16">
+      <StructuredData data={contactPageSchema} />
+      <StructuredData data={localBusinessSchema} />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

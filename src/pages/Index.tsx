@@ -13,8 +13,84 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Banner from "@/components/banner";
+import StructuredData from "@/components/StructuredData";
 
 const Index = () => {
+  // Structured Data for Homepage
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Namma Code",
+    alternateName: "ನಮ್ಮ Code",
+    url: "https://www.nammacode.com",
+    logo: "https://www.nammacode.com/nammacode-logo1.png",
+    description:
+      "Professional web development and digital solutions company in Bengaluru, India. We create custom websites, UI/UX designs, and provide SEO optimization services.",
+    foundingDate: "2025",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Bengaluru",
+      addressRegion: "Karnataka",
+      addressCountry: "IN",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-9481973172",
+      contactType: "customer service",
+      email: "nammacode@gmail.com",
+      availableLanguage: ["English", "Hindi", "Kannada"],
+    },
+    sameAs: ["https://www.instagram.com/nammacode"],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Web Development Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Web Development",
+            description: "Custom websites built with modern technologies",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "UI/UX Design",
+            description: "Beautiful, intuitive designs that engage users",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "SEO Optimization",
+            description: "Boost online visibility and drive organic traffic",
+          },
+        },
+      ],
+    },
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Namma Code - Digital Excellence Crafting",
+    url: "https://www.nammacode.com",
+    description:
+      "Transform your ideas into powerful digital solutions that drive growth, engage users, and deliver exceptional results.",
+    publisher: {
+      "@type": "Organization",
+      name: "Namma Code",
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://www.nammacode.com/services?search={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   const services = [
     {
       icon: Code2,
@@ -51,6 +127,8 @@ const Index = () => {
 
   return (
     <div className="pt-16">
+      <StructuredData data={organizationSchema} />
+      <StructuredData data={websiteSchema} />
       <Banner />
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-secondary/10 overflow-hidden">

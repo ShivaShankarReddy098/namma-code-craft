@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+  
+  <!-- Homepage - Main Landing Page -->
+  <url>
+    <loc>https://www.nammacode.com/</loc>
+    <lastmod>2025-01-21T10:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.nammacode.com/nammacode-logo1.png</image:loc>
+      <image:caption>Namma Code - Digital Excellence Crafting</image:caption>
+      <image:title>Namma Code Logo</image:title>
+    </image:image>
+  </url>
+  
+  <!-- About Page - Company Information -->
+  <url>
+    <loc>https://www.nammacode.com/about</loc>
+    <lastmod>2025-01-21T10:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Services Page - Main Business Offerings -->
+  <url>
+    <loc>https://www.nammacode.com/services</loc>
+    <lastmod>2025-01-21T10:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Portfolio Page - Showcase Work -->
+  <url>
+    <loc>https://www.nammacode.com/portfolio</loc>
+    <lastmod>2025-01-21T10:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Contact Page - Lead Generation -->
+  <url>
+    <loc>https://www.nammacode.com/contact</loc>
+    <lastmod>2025-01-21T10:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Service-specific landing pages for better SEO -->
+  <url>
+    <loc>https://www.nammacode.com/services#web-development</loc>
+    <lastmod>2025-01-21T10:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nammacode.com/services#ui-ux-design</loc>
+    <lastmod>2025-01-21T10:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nammacode.com/services#seo-optimization</loc>
+    <lastmod>2025-01-21T10:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nammacode.com/services#website-rebuilding</loc>
+    <lastmod>2025-01-21T10:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nammacode.com/services#performance-optimization</loc>
+    <lastmod>2025-01-21T10:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.nammacode.com/services#security-maintenance</loc>
+    <lastmod>2025-01-21T10:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
