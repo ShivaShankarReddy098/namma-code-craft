@@ -68,19 +68,19 @@ const Banner = () => {
 
                 {/* Main message with highlighted content */}
                 <div className="flex-1">
-                  <div className="text-white text-sm md:text-base font-medium leading-relaxed">
+                  <div className="text-foreground text-sm md:text-base font-medium leading-relaxed">
                     <span className="text-yellow-300 font-bold animate-pulse">
                       🎉 Welcome to Namma Code Craft!
                     </span>
                     <span className="ml-2">
                       We are excited to have you here. We're offering
                     </span>
-                    <span className="mx-2 px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold rounded-full text-xs md:text-sm shadow-lg animate-bounce inline-block">
+                    <span className="mx-2 px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-foreground font-bold rounded-full text-xs md:text-sm shadow-lg animate-bounce inline-block">
                       <Crown className="inline h-3 w-3 mr-1" />
                       FREE DOMAIN
                     </span>
                     <span>service with</span>
-                    <span className="mx-1 px-2 py-1 bg-gradient-to-r from-green-400 to-emerald-400 text-black font-bold rounded-full text-xs md:text-sm shadow-lg animate-pulse inline-block">
+                    <span className="mx-1 px-2 py-1 bg-gradient-to-r from-green-400 to-emerald-400 text-foreground font-bold rounded-full text-xs md:text-sm shadow-lg animate-pulse inline-block">
                       1 MONTH FREE MAINTENANCE
                     </span>
                   </div>
@@ -99,7 +99,7 @@ const Banner = () => {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsVisible(false)}
-                className="flex-shrink-0 text-white hover:text-red-400 hover:bg-white/10 transition-all duration-300 rounded-full border border-white/20 hover:border-red-400/50 hover:scale-110"
+                className="flex-shrink-0 text-foreground hover:text-red-400 hover:bg-white/10 transition-all duration-300 rounded-full border border-white/20 hover:border-red-400/50 hover:scale-110"
               >
                 <X className="h-5 w-5" />
               </Button>
