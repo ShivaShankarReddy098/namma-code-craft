@@ -3,6 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import StructuredData from "@/components/StructuredData";
+import {ArrowRight} from "lucide-react";
+import { Link } from "react-router-dom";
+
+
 
 const Portfolio = () => {
   // Structured Data for Portfolio Page
@@ -173,7 +177,7 @@ const Portfolio = () => {
       <StructuredData data={portfolioSchema} />
       <StructuredData data={organizationSchema} />
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
+      <section className="py-20 bg-bg-background from-primary/5 via-background to-secondary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold font-playfair mb-6 animate-fade-in">
@@ -282,14 +286,14 @@ const Portfolio = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-20 bg-bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "200+", label: "Projects Completed" },
-              { value: "100+", label: "Happy Clients" },
-              { value: "50+", label: "Awards Won" },
-              { value: "5", label: "Years Experience" },
+              { value: "100+", label: "Projects Completed" },
+              { value: "80+", label: "Happy Clients" },
+              { value: "20+", label: "Awards Won" },
+              { value: "1", label: "Years Experience" },
             ].map((stat, index) => (
               <div
                 key={stat.label}
@@ -309,22 +313,81 @@ const Portfolio = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center bg-gradient-to-r from-primary to-blue-600 text-primary-foreground rounded-2xl p-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-playfair mb-4">
-              Ready to Start Your Project?
-            </h2>
-            <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-              Let's create something amazing together. Contact us today to
-              discuss your project.
-            </p>
-            <Button asChild size="lg" variant="secondary">
-              <a href="/contact">Get Started</a>
-            </Button>
-          </div>
-        </div>
-      </section>
+     <section className="relative py-24 overflow-hidden bg-white dark:bg-background">
+  {/* Background glow */}
+  <div className="absolute inset-0 -z-10">
+    <div
+      className="absolute top-1/2 left-1/2 h-[500px] w-[500px]
+      -translate-x-1/2 -translate-y-1/2 rounded-full
+      bg-gradient-to-tr from-violet-500/20 via-purple-500/10 to-transparent
+      blur-3xl"
+    />
+  </div>
+
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      className="relative text-center rounded-3xl
+      border border-black/10 dark:border-white/10
+      bg-white/80 dark:bg-neutral-900/70
+      backdrop-blur-xl
+      px-6 py-16 md:px-16
+      shadow-[0_30px_80px_-20px_rgba(0,0,0,0.3)]"
+    >
+
+      {/* Accent line */}
+      <div
+        className="mx-auto mb-6 h-1 w-16 rounded-full
+        bg-gradient-to-r from-violet-500 to-purple-600"
+      />
+
+      <h2
+        className="font-playfair text-[36px] md:text-[88px] font-extrabold
+        tracking-tight leading-tight
+        text-black dark:text-white"
+      >
+        Ready to{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-purple-600">
+          Get Started?
+        </span>
+      </h2>
+
+      <p
+        className="mt-6 mb-10 max-w-2xl mx-auto text-lg md:text-xl
+        text-black/70 dark:text-white/70"
+      >
+        Let’s discuss your project and find the perfect solution for your
+        business needs.
+      </p>
+
+      <Button
+        asChild
+        size="lg"
+        className="group relative overflow-hidden rounded-full
+        bg-gradient-to-r from-violet-600 to-purple-600
+        px-8 py-6 text-base font-semibold text-white
+        shadow-lg shadow-purple-500/30
+        transition-all duration-300 hover:scale-105"
+      >
+        <Link to="/contact" className="relative flex items-center">
+          {/* Loading sweep */}
+          <span
+            className="absolute inset-0 -translate-x-full
+            bg-gradient-to-r from-transparent via-white/30 to-transparent
+            group-hover:translate-x-full transition-transform duration-700"
+          />
+
+          <span className="relative z-10 flex items-center">
+            Contact Us Today
+            <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+        </Link>
+      </Button>
+
+    </div>
+  </div>
+</section>
+
+
     </div>
   );
 };

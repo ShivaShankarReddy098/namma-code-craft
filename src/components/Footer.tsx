@@ -27,7 +27,7 @@ const Footer = () => {
                 />
               </div>
               <span className="text-2xl font-bold font-playfair text-gradient w-[150px] text-center block">
-                <span className="text-black">Namma</span> Code
+                <span className="text-foreground">Namma</span> Code
               </span>
             </Link>
             <p className="text-muted-foreground max-w-xs">
@@ -132,7 +132,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary" />
                 <span className="text-muted-foreground">
-                  nammacode@gmail.com
+                  nammacode.in@gmail.com
                 </span>
               </div>
               <div className="flex items-center space-x-3">
@@ -152,7 +152,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-muted-foreground text-sm">
-              © 2025 Namma Code. All rights reserved.
+              © 2026 Namma Code. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a
